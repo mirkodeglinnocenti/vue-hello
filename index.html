@@ -9,8 +9,12 @@
 
     <style>
 
+        body{
+            background-color: #797979;
+        }
+
         img{
-            width: 50%;
+            width: 40%;
         }
 
         .hero-section{
@@ -20,6 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: white;
         }
 
     </style>
@@ -34,6 +39,9 @@
         <div :class="className">
             <img v-bind:src="img1Src" alt="">
             <h1>{{principalTitle}}</h1>
+            <input type="text" placeholder="Scrivi qualcosa" v-model="textInput">
+            <h4>Cosa abbiamo scritto dentro l'input</h4>
+            <p>{{textInput}}</p>
         </div>
 
     </div>
@@ -50,6 +58,7 @@
             principalTitle: 'Impariamo Vue!',
             img1Src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png',
             className: 'hero-section',
+            textInput: '',
           }
         }
       }).mount('#app')
