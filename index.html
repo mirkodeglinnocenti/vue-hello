@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Hello</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+
+        img{
+            width: 50%;
+        }
+
+        .hero-section{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+
 </head>
 <body>
     
@@ -13,7 +31,10 @@
 
     <div id="app">
 
-        <h1>{{principalTitle}}</h1>
+        <div :class="className">
+            <img v-bind:src="img1Src" alt="">
+            <h1>{{principalTitle}}</h1>
+        </div>
 
     </div>
     
@@ -26,7 +47,9 @@
       createApp({
         data() {
           return {
-            principalTitle: 'Impariamo Vue!'
+            principalTitle: 'Impariamo Vue!',
+            img1Src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png',
+            className: 'hero-section',
           }
         }
       }).mount('#app')
