@@ -39,6 +39,7 @@
         <div :class="className">
             <img v-bind:src="img1Src" alt="">
             <h1>{{principalTitle}}</h1>
+            <button @click="saluta" style="margin-bottom: 12px;">Premi e guarda in console</button>
             <input type="text" placeholder="Scrivi qualcosa" v-model="textInput">
             <h4>Cosa abbiamo scritto dentro l'input</h4>
             <p>{{textInput}}</p>
@@ -60,7 +61,13 @@
             className: 'hero-section',
             textInput: '',
           }
+        },
+        methods: {
+            saluta (){
+                console.log('Ciaoo');
+            },
         }
+
       }).mount('#app')
     </script>
 
